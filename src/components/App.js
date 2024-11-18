@@ -1,15 +1,21 @@
-import React from "react";
-import blogData from "../data/blog";
+// src/components/App.js
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
+import { posts } from '../data/blog'; // Assuming blog data is imported from blog.js
 
-console.log(blogData);
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div className="App"> {/* Added className="App" here */}
+      <Header name="My Personal Blog" />
+      <About
+        image="https://via.placeholder.com/200"  // You can update this with a custom image
+        about="This is a blog about React, JavaScript, and more!"
+      />
+      <ArticleList posts={posts} />  {/* Pass posts to ArticleList */}
     </div>
   );
-}
+};
 
 export default App;
